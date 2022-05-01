@@ -33,5 +33,6 @@ analyse:
 lint-fix:
 	composer exec  phpcbf app bootstrap config lang tests
 
-
+deploy:
+	git push heroku main
 
