@@ -22,12 +22,12 @@ class UrlCheckController extends Controller
             DB::table('url_checks')->insert(
                 [
                 'url_id' => $id,
-                'created_at' => Carbon::now(),
+                'created_at' => Carbon::now('Europe/Moscow'),
                 'status_code' => $response->status(),
                 'h1' => $h1,
                 'title' => $title,
                 'description' => $description,
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now('Europe/Moscow')
                 ]
             );
 

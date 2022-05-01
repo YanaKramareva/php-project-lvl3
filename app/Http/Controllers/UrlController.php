@@ -12,16 +12,13 @@ class UrlController extends Controller
     {
         $urls = DB::table('urls')->paginate();
         $lastChecks = DB::table('url_checks')
-            ->orderBy('url_id')
-            ->latest()
-            ->distinct('url_id')
-            ->get()
-            ->keyBy('url_id');
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('urls.index', compact('urls', 'lastChecks'));
     }
 
 
-    public function store(Request $request, \Response $response)
+    public function store(Request $request)
     {
         $validatedData =  $this->validate(
             $request,
@@ -36,8 +33,8 @@ class UrlController extends Controller
             $urlId = DB::table('urls')->insertGetId(
                 [
                     'name' => $validatedData['url']['name'],
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now()
+                    'created_at' => Carbon::now('Europe/Moscow'),
+                    'updated_at' => Carbon::now('Europe/Moscow')
                 ]
             );
 
@@ -51,13 +48,13 @@ class UrlController extends Controller
         }
     }
 
-    public function show(Request $request, int $id)
+    public function show(int $id)
     {
         $url = DB::table('urls')->find($id);
         $urlChecks = DB::table('url_checks')
             ->where('url_id', $id)
-            ->latest()
-            ->paginate();
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
 
         return view('urls.show', compact('url', 'urlChecks'));
     }
