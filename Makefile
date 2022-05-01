@@ -1,23 +1,37 @@
-install:
+start:
+	php artisan serve
+
+setup:
 	composer install
+	cp -n .env.example .env|| true
+	php artisan key:gen --ansi
+	touch database/database.sqlite
+	php artisan migrate
+	npm install
 
-validate:
-	composer validate
+migrate:
+	php artisan migrate
 
-lint:
-	composer exec phpcs -- --standard=PSR12 src bin tests
+console:
+	php artisan tinker
 
-coverage:
-	composer run-script test -- --coverage-clover build/logs/clover.xml
+log:
+	tail -f storage/logs/laravel.log
 
 test:
-	composer run-script test
+	php artisan test --filter 'Tests\\Feature'
+
+test-coverage:
+	php artisan test --coverage-clover build/logs/clover.xml
+
+lint:
+	composer exec phpcs  -- --standard=PSR12 app bootstrap config lang tests
+
+analyse:
+	composer exec phpstan analyse -v -- --memory-limit=-4
 
 lint-fix:
-	composer exec --verbose phpcbf -- --standard=PSR12 src tests
-
-phpstan:
-	composer exec phpstan -- analyse -l 5 src tests
+	composer exec  phpcbf app bootstrap config lang tests
 
 
 
