@@ -1,12 +1,11 @@
 {
     "name": "hexlet/code",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "The Laravel Framework project",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
         "php": "8.*",
-        "ext-yaml": "*",
         "guzzlehttp/guzzle": "7.*",
         "imangazaliev/didom": "^1.18",
         "laravel/framework": "^9.2",
@@ -16,6 +15,8 @@
         "laravelcollective/html": "^6.3"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest"
+        ,
         "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
