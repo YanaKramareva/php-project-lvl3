@@ -23,16 +23,19 @@ class UrlController extends Controller
         $validatedData =  $this->validate(
             $request,
             [
-                'url.name' => 'required|max:255|url'
+                'url.name' => 'required|max:255|active_url'
             ]
         );
 
-        $url = DB::table('urls')->where('name', $validatedData['url']['name'])->first();
+        $parsedUrl = parse_url($request['url.name']);
+        $normalizedUrl = strtolower("{$parsedUrl['scheme']}://{$parsedUrl['host']}");
+
+        $url = DB::table('urls')->where('name', $normalizedUrl)->first();
 
         if (is_null($url)) {
             $urlId = DB::table('urls')->insertGetId(
                 [
-                    'name' => $validatedData['url']['name'],
+                    'name' => $normalizedUrl,
                     'created_at' => Carbon::now('Europe/Moscow'),
                     'updated_at' => Carbon::now('Europe/Moscow')
                 ]
@@ -41,11 +44,11 @@ class UrlController extends Controller
             return redirect()
                 ->route('urls.show', ['url' => $urlId])
                 ->with('success', 'Страница успешно добавлена');
-        } else {
-            return redirect()
-                ->route('urls.show', ['url' => $url->id])
-                ->with('success', 'Страница уже существует');
         }
+
+        return redirect()
+            ->route('urls.show', ['url' => $url->id])
+            ->with('success', 'Страница уже существует');
     }
 
     public function show(int $id)
