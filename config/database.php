@@ -77,7 +77,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
-            'sslmode' => '',
+            'sslmode' => 'require',
         ],
         /*'default' => env('DB_CONNECTION', 'pgsql'),
         'connections' => [
