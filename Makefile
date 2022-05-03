@@ -32,7 +32,7 @@ lint:
 	composer exec phpcs -- --standard=PSR12 app routes tests
 
 lint-fix:
-	composer phpcbf
+	composer phpcbf app routes tests database lang
 
 test-coverage:
 	composer exec --verbose phpunit tests -- --coverage-clover build/logs/clover.xml
