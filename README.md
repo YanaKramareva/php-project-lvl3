@@ -10,6 +10,11 @@ This is a complete website based on the Laravel framework.
 Here, the basic principles of building modern sites on the MVC architecture are being worked out:
 work with routing, request handlers and template engine, interaction with the database.
 
+### Requirements
+###### PHP ^8.1
+###### Node.js & npm
+###### SQLite for local
+
 ### Installing with Git:
 
 In your terminal run:
