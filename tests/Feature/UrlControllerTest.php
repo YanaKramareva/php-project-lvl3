@@ -12,11 +12,13 @@ class UrlControllerTest extends TestCase
     {
         parent::setUp();
 
-        DB::table('urls')->insert([
+        DB::table('urls')->insert(
+            [
                 'name' => 'https://test.com',
                 'created_at' => Carbon::now('Europe/Moscow'),
                 'updated_at' => Carbon::now('Europe/Moscow')
-        ]);
+            ]
+        );
     }
 
     public function testIndex()
