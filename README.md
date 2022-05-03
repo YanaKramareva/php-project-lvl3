@@ -14,6 +14,7 @@ work with routing, request handlers and template engine, interaction with the da
 ###### PHP ^8.1
 ###### Node.js & npm
 ###### SQLite for local
+###### Heroku CLI
 
 ### Installing with Git:
 
