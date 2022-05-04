@@ -18,7 +18,7 @@ class CreateUrlsTable extends Migration
             function (Blueprint $table) {
                 $table->id();
                 $table->string('name')->unique();
-                $table->timestamps();
+                $table->timestamps('created_at');
             }
         );
     }

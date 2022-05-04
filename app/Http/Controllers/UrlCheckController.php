@@ -26,8 +26,7 @@ class UrlCheckController extends Controller
                 'status_code' => $response->status(),
                 'h1' => $h1,
                 'title' => $title,
-                'description' => $description,
-                'updated_at' => Carbon::now('Europe/Moscow')
+                'description' => $description
                 ]
             );
 
