@@ -7,9 +7,12 @@ use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 use Tests\TestCase;
 use Exception;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UrlCheckControllerTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -18,7 +21,7 @@ class UrlCheckControllerTest extends TestCase
     public function testStore()
     {
         $data = [
-            'name' => 'https://google.com',
+            'name' => 'https://goo.com',
             'created_at' => Carbon::now('Europe/Moscow'),
             'updated_at' => Carbon::now('Europe/Moscow')
         ];

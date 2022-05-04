@@ -14,7 +14,8 @@ class CreateUrlsTable extends Migration
     public function up()
     {
         Schema::create(
-            'urls', function (Blueprint $table) {
+            'urls',
+            function (Blueprint $table) {
                 $table->id();
                 $table->string('name')->unique();
                 $table->timestamps();
@@ -32,4 +33,3 @@ class CreateUrlsTable extends Migration
         Schema::dropIfExists('urls');
     }
 }
-

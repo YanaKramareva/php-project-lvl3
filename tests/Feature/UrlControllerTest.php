@@ -5,18 +5,21 @@ namespace Tests\Feature;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UrlControllerTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
 
         DB::table('urls')->insert(
             [
-                'name' => 'https://test.com',
-                'created_at' => Carbon::now('Europe/Moscow'),
-                'updated_at' => Carbon::now('Europe/Moscow')
+            'name' => 'https://eldorado.ru',
+            'created_at' => Carbon::now('Europe/Moscow'),
+            'updated_at' => Carbon::now('Europe/Moscow')
             ]
         );
     }
@@ -29,7 +32,7 @@ class UrlControllerTest extends TestCase
 
     public function testStore()
     {
-        $data = ['name' => 'https://test.com'];
+        $data = ['name' => 'https://eldorado.ru'];
         $response = $this->followingRedirects()->post(route('urls.store'), ['url' => $data]);
         $response->assertSessionHasNoErrors();
         $response->assertOk();
@@ -40,7 +43,7 @@ class UrlControllerTest extends TestCase
 
     public function testShow()
     {
-        $name = 'https://test.com';
+        $name = 'https://mvideo.ru';
         $id = DB::table('urls')->insertGetId(['name' => $name]);
         $response = $this->get(route('urls.show', ['url' => $id]));
         $response->assertOk();
