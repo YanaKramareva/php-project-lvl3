@@ -23,6 +23,9 @@
                 @endforeach
             @endif
         </table>
-     </div>
+        <div class="pagination justify-content-end">
+        {{ $urls->links('pagination::bootstrap-5') }}
+        </div>
+        </div>
 @endsection
 

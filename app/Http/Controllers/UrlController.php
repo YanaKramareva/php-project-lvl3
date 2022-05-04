@@ -10,7 +10,7 @@ class UrlController extends Controller
 {
     public function index()
     {
-        $urls = DB::table('urls')->paginate(10);
+        $urls = DB::table('urls')->paginate();
         $lastChecks = DB::table('url_checks')
             ->orderBy('created_at', 'desc')
             ->get();
