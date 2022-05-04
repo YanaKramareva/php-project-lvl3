@@ -36,8 +36,7 @@ class UrlController extends Controller
             $urlId = DB::table('urls')->insertGetId(
                 [
                     'name' => $normalizedUrl,
-                    'created_at' => Carbon::now('Europe/Moscow')
-                 //   'updated_at' => Carbon::now('Europe/Moscow')
+                    'created_at' => Carbon::now()
                 ]
             );
 
