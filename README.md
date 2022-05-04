@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/YanaKramareva/php-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/YanaKramareva/php-project-lvl3/actions)
 
 ### Link to running application on Heroku:
-https://hexlet-php-project-lvl3.herokuapp.com/
+http://hexlet-php-project-lvl3.herokuapp.com/
 
 Page Analyzer – is a site that analyzes the specified pages for SEO suitability.
 The third project in training PHP-developer on Hexlet.
