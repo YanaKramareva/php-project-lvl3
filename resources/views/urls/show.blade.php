@@ -17,11 +17,7 @@
                 <td>Дата создания</td>
                 <td>{{ $url->created_at }}</td>
             </tr>
-            <tr>
-                <td>Дата обновления</td>
-                <td>{{ $url->updated_at }}</td>
-            </tr>
-        </table>
+         </table>
         <h2 class="mt-5 mb-3">Проверки</h2>
         {{ Form::open(['url' => route('urls.checks.store', [$url->id])]) }}
         {{ Form::submit('Запустить проверку', array('class' => 'btn btn-primary')) }}
