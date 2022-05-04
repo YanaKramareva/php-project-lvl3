@@ -18,8 +18,7 @@ class UrlControllerTest extends TestCase
         DB::table('urls')->insert(
             [
             'name' => 'https://eldorado.ru',
-            'created_at' => Carbon::now('Europe/Moscow'),
-            'updated_at' => Carbon::now('Europe/Moscow')
+            'created_at' => Carbon::now(),
             ]
         );
     }
@@ -44,7 +43,10 @@ class UrlControllerTest extends TestCase
     public function testShow()
     {
         $name = 'https://mvideo.ru';
-        $id = DB::table('urls')->insertGetId(['name' => $name]);
+        $id = DB::table('urls')->insertGetId([
+            'name' => $name,
+            'created_at' => Carbon::now(),
+            ]);
         $response = $this->get(route('urls.show', ['url' => $id]));
         $response->assertOk();
         $response->assertSeeText($name);
