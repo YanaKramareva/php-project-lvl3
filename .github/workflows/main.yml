@@ -1,4 +1,4 @@
-name: linter and tests
+name: tests
 
 on:
   push:
@@ -17,12 +17,6 @@ jobs:
 
       - name: Install
         run: make setup
-
-      - name: Run phpstan
-        run: make analyse
-
-      - name: Run linter
-        run: make lint
 
       - name: Code Climate Coverage Action
         uses: paambaati/codeclimate-action@v3.0.0
