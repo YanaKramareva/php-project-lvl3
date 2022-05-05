@@ -3,7 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/9e4ca54cfc6a6df85822/maintainability)](https://codeclimate.com/github/YanaKramareva/php-project-lvl3/maintainability)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/9e4ca54cfc6a6df85822/maintainability)](https://codeclimate.com/github/YanaKramareva/php-project-lvl3/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9e4ca54cfc6a6df85822/test_coverage)](https://codeclimate.com/github/YanaKramareva/php-project-lvl3/test_coverage)
 
 ### Link to running application on Heroku:
 http://hexlet-php-project-lvl3.herokuapp.com/
