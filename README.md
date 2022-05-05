@@ -17,7 +17,7 @@ work with routing, request handlers and template engine, interaction with the da
 ### Requirements
 ###### PHP ^8.1
 ###### Node.js & npm
-###### PostgreSQL for local
+###### Sqlite for local
 ###### Heroku CLI
 
 ### Installing with Git:
