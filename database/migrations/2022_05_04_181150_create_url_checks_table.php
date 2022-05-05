@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create(
-            'url_checks', function (Blueprint $table) {
+            'url_checks',
+            function (Blueprint $table) {
                 $table->id();
                 $table->foreignId('url_id')->constrained('urls');
                 $table->integer('status_code')->nullable();

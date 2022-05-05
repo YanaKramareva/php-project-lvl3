@@ -9,7 +9,7 @@ use Carbon\Carbon;
 
 class UrlController extends Controller
 {
-    public function index(): Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function index()
     {
         $urls = DB::table('urls')->paginate(5);
         $lastChecks = DB::table('url_checks')
@@ -19,10 +19,7 @@ class UrlController extends Controller
     }
 
 
-    /**
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(Request $request)
     {
         $validatedData =  $this->validate(
             $request,
@@ -54,7 +51,7 @@ class UrlController extends Controller
             ->with('success', 'Страница уже существует');
     }
 
-    public function show(int $id): Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function show(int $id)
     {
         $url = DB::table('urls')->find($id);
         $urlChecks = DB::table('url_checks')
