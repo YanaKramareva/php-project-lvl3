@@ -1,6 +1,10 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/YanaKramareva/php-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/YanaKramareva/php-project-lvl3/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/9e4ca54cfc6a6df85822/maintainability)](https://codeclimate.com/github/YanaKramareva/php-project-lvl3/maintainability)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/9e4ca54cfc6a6df85822/maintainability)](https://codeclimate.com/github/YanaKramareva/php-project-lvl3/maintainability)
+
 ### Link to running application on Heroku:
 http://hexlet-php-project-lvl3.herokuapp.com/
 
