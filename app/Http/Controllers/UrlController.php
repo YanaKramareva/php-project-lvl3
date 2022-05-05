@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
 
 class UrlController extends Controller
 {
-    public function index()
+    public function index(): Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $urls = DB::table('urls')->paginate(5);
         $lastChecks = DB::table('url_checks')
@@ -18,7 +19,10 @@ class UrlController extends Controller
     }
 
 
-    public function store(Request $request)
+    /**
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         $validatedData =  $this->validate(
             $request,
@@ -50,7 +54,7 @@ class UrlController extends Controller
             ->with('success', 'Страница уже существует');
     }
 
-    public function show(int $id)
+    public function show(int $id): Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $url = DB::table('urls')->find($id);
         $urlChecks = DB::table('url_checks')
