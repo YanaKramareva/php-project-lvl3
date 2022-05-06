@@ -5,7 +5,7 @@
 [![PHP CI](https://github.com/YanaKramareva/php-project-lvl3/actions/workflows/main.yml/badge.svg)](https://github.com/YanaKramareva/php-project-lvl3/actions/workflows/main.yml)
 
 ### Link to running application on Heroku:
-http://hexlet-php-project-lvl3.herokuapp.com/
+https://hexlet-php-project-lvl3.herokuapp.com/
 
 Page Analyzer – is a site that analyzes the specified pages for SEO suitability.
 The third project in training PHP-developer on Hexlet.
