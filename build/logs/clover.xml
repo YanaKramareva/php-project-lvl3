@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651743722">
-  <project timestamp="1651743722">
+<coverage generated="1652259820">
+  <project timestamp="1652259820">
     <file name="/home/yana/php-project-lvl3/app/Console/Kernel.php">
       <class name="App\Console\Kernel" namespace="global">
         <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
@@ -153,9 +153,13 @@
     </file>
     <file name="/home/yana/php-project-lvl3/app/Providers/AppServiceProvider.php">
       <class name="App\Providers\AppServiceProvider" namespace="global">
-        <metrics complexity="2" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
       </class>
-      <metrics loc="29" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <line num="26" type="method" name="boot" visibility="public" complexity="2" crap="2.15" count="5"/>
+      <line num="28" type="stmt" count="5"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="5"/>
+      <metrics loc="34" ncloc="23" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
     </file>
     <file name="/home/yana/php-project-lvl3/app/Providers/AuthServiceProvider.php">
       <class name="App\Providers\AuthServiceProvider" namespace="global">
@@ -201,6 +205,6 @@
       <line num="53" type="stmt" count="0"/>
       <metrics loc="58" ncloc="41" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="13" coveredelements="11"/>
     </file>
-    <metrics files="20" loc="673" ncloc="498" classes="11" methods="14" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="66" coveredstatements="49" elements="80" coveredelements="57"/>
+    <metrics files="20" loc="678" ncloc="504" classes="12" methods="15" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="69" coveredstatements="51" elements="84" coveredelements="59"/>
   </project>
 </coverage>

@@ -5,12 +5,9 @@ namespace Tests\Feature;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UrlControllerTest extends TestCase
 {
-    use RefreshDatabase;
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -21,6 +18,15 @@ class UrlControllerTest extends TestCase
             'created_at' => Carbon::now(),
             ]
         );
+
+        $this->name = 'https://mvideo.ru';
+        $this->id = DB::table('urls')->insertGetId(
+            [
+                'name' => $this->name,
+                'created_at' => Carbon::now(),
+            ]
+        );
+
     }
 
     public function testIndex()
@@ -31,26 +37,19 @@ class UrlControllerTest extends TestCase
 
     public function testStore()
     {
+        $this->withoutMiddleware();
         $data = ['name' => 'https://eldorado.ru'];
         $response = $this->followingRedirects()->post(route('urls.store'), ['url' => $data]);
         $response->assertSessionHasNoErrors();
         $response->assertOk();
         $response->assertSeeText($data['name']);
-
         $this->assertDatabaseHas('urls', $data);
     }
 
     public function testShow()
     {
-        $name = 'https://mvideo.ru';
-        $id = DB::table('urls')->insertGetId(
-            [
-            'name' => $name,
-            'created_at' => Carbon::now(),
-            ]
-        );
-        $response = $this->get(route('urls.show', ['url' => $id]));
+        $response = $this->get(route('urls.show', ['url' => $this->id]));
         $response->assertOk();
-        $response->assertSeeText($name);
+        $response->assertSeeText($this->name);
     }
 }

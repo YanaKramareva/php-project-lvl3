@@ -23,10 +23,15 @@ work with routing, request handlers and template engine, interaction with the da
 
 In your terminal run:
 
- git clone https://github.com/YanaKramareva/php-project-lvl3.git
-
+  ```sh
+   git clone https://github.com/YanaKramareva/php-project-lvl3.git
+  ```
+  ```sh
  cd php-project-lvl3
-
+  ```
+  ```sh
  make setup
-
+  ```
+  ```sh
  make start
+  ```
