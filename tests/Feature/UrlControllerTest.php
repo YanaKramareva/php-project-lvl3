@@ -8,16 +8,15 @@ use Tests\TestCase;
 
 class UrlControllerTest extends TestCase
 {
+    private string $name;
+    private int $id;
+
     protected function setUp(): void
     {
         parent::setUp();
 
-        DB::table('urls')->insert([
-            'name' => 'https://eldorado.ru',
-            'created_at' => Carbon::now(),
-            ]);
-
         $this->name = 'https://mvideo.ru';
+
         $this->id = DB::table('urls')->insertGetId([
                 'name' => $this->name,
                 'created_at' => Carbon::now(),
@@ -33,7 +32,7 @@ class UrlControllerTest extends TestCase
     public function testStore()
     {
         $this->withoutMiddleware();
-        $data = ['name' => 'https://eldorado.ru'];
+        $data = ['name' => 'https://mvideo.ru'];
         $response = $this->followingRedirects()->post(route('urls.store'), ['url' => $data]);
         $response->assertSessionHasNoErrors();
         $response->assertOk();

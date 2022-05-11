@@ -10,6 +10,9 @@ use Exception;
 
 class UrlCheckControllerTest extends TestCase
 {
+    private int $id;
+    private array $expectedData;
+
     protected function setUp(): void
     {
         parent::setUp();
