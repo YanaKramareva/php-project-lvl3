@@ -12,7 +12,7 @@ class UrlControllerTest extends TestCase
     {
         parent::setUp();
 
-        DB::table('urls')->insert(            [
+        DB::table('urls')->insert([
             'name' => 'https://eldorado.ru',
             'created_at' => Carbon::now(),
             ]);
