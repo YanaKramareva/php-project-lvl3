@@ -16,22 +16,25 @@ class UrlCheckControllerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->withoutMiddleware();
-        $data = [
+        $this->data = [
             'name' => 'https://google.com',
             'created_at' => Carbon::now(),
         ];
 
-        $this->id = DB::table('urls')->insertGetId($data);
+    }
+
+    public function testStore()
+    {
+        $this->id = DB::table('urls')->insertGetId($this->data);
         $pathToHtml = __DIR__ . '/../Fixtures/fake.html';
         $content = file_get_contents($pathToHtml);
         if ($content === false) {
             throw new Exception('File not found');
         }
 
-        Http::fake([$data['name'] => Http::response($content, 200)]);
+        Http::fake([$this->data['name'] => Http::response($content, 200)]);
 
-        $this->expectedData = [
+        $expectedData = [
             'url_id' => $this->id,
             'status_code' => 200,
             'h1' => 'header',
@@ -39,13 +42,11 @@ class UrlCheckControllerTest extends TestCase
             'description' => 'description',
             'created_at' => Carbon::now()
         ];
-    }
 
-    public function testStore()
-    {
+
         $response = $this->post(route('urls.checks.store', $this->id));
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
-        $this->assertDatabaseHas('url_checks', $this->expectedData);
+        $this->assertDatabaseHas('url_checks', $expectedData);
     }
 }

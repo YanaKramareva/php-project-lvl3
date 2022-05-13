@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use DiDom\Document;
 use Illuminate\Support\Facades\DB;
@@ -19,16 +18,14 @@ class UrlCheckController extends Controller
             $title = optional($document->first('title'))->text();
             $description = optional($document->first('meta[name=description]'))->getAttribute('content');
 
-            DB::table('url_checks')->insert(
-                [
+            DB::table('url_checks')->insert([
                 'url_id' => $id,
                 'created_at' => Carbon::now(),
                 'status_code' => $response->status(),
                 'h1' => $h1,
                 'title' => $title,
                 'description' => $description
-                ]
-            );
+                ]);
 
         return redirect()
             ->route('urls.show', ['url' => $id])

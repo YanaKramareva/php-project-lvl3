@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -25,8 +24,7 @@ class UrlController extends Controller
             $request,
             [
                 'url.name' => 'required|max:255|active_url'
-            ]
-        );
+            ]);
 
         $parsedUrl = parse_url($request['url.name']);
         $normalizedUrl = strtolower("{$parsedUrl['scheme']}://{$parsedUrl['host']}");
@@ -34,12 +32,10 @@ class UrlController extends Controller
         $url = DB::table('urls')->where('name', $normalizedUrl)->first();
 
         if (is_null($url)) {
-            $urlId = DB::table('urls')->insertGetId(
-                [
+            $urlId = DB::table('urls')->insertGetId([
                     'name' => $normalizedUrl,
                     'created_at' => Carbon::now()
-                ]
-            );
+                ]);
 
             return redirect()
                 ->route('urls.show', ['url' => $urlId])
@@ -54,6 +50,9 @@ class UrlController extends Controller
     public function show(int $id)
     {
         $url = DB::table('urls')->find($id);
+
+        abort_unless($url, 404, 'Страница не найдена');
+
         $urlChecks = DB::table('url_checks')
             ->where('url_id', $id)
             ->orderBy('created_at', 'desc')
