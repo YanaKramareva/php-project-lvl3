@@ -10,8 +10,7 @@ use Exception;
 
 class UrlCheckControllerTest extends TestCase
 {
-    private int $id;
-    private array $expectedData;
+    private array $data;
 
     protected function setUp(): void
     {
@@ -24,7 +23,7 @@ class UrlCheckControllerTest extends TestCase
 
     public function testStore()
     {
-        $this->id = DB::table('urls')->insertGetId($this->data);
+        $id = DB::table('urls')->insertGetId($this->data);
         $pathToHtml = __DIR__ . '/../Fixtures/fake.html';
         $content = file_get_contents($pathToHtml);
         if ($content === false) {
@@ -34,7 +33,7 @@ class UrlCheckControllerTest extends TestCase
         Http::fake([$this->data['name'] => Http::response($content, 200)]);
 
         $expectedData = [
-            'url_id' => $this->id,
+            'url_id' => $id,
             'status_code' => 200,
             'h1' => 'header',
             'title' => 'example',
@@ -43,7 +42,7 @@ class UrlCheckControllerTest extends TestCase
         ];
 
 
-        $response = $this->post(route('urls.checks.store', $this->id));
+        $response = $this->post(route('urls.checks.store', $id));
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
         $this->assertDatabaseHas('url_checks', $expectedData);
