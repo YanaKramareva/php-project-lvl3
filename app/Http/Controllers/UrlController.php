@@ -24,7 +24,7 @@ class UrlController extends Controller
             $request,
             [
                 'url.name' => 'required|max:255|active_url'
-            ]);
+        ]);
 
         $parsedUrl = parse_url($request['url.name']);
         $normalizedUrl = strtolower("{$parsedUrl['scheme']}://{$parsedUrl['host']}");

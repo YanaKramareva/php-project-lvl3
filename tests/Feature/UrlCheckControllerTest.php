@@ -20,7 +20,6 @@ class UrlCheckControllerTest extends TestCase
             'name' => 'https://google.com',
             'created_at' => Carbon::now(),
         ];
-
     }
 
     public function testStore()
