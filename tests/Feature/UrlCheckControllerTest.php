@@ -27,7 +27,7 @@ class UrlCheckControllerTest extends TestCase
         $pathToHtml = __DIR__ . '/../Fixtures/fake.html';
         $content = file_get_contents($pathToHtml);
         if ($content === false) {
-            throw new Exception('File not found');
+            throw new Exception('Something wrong with fixtures file');
         }
 
         Http::fake([$this->data['name'] => Http::response($content, 200)]);

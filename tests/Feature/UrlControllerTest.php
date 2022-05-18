@@ -31,12 +31,11 @@ class UrlControllerTest extends TestCase
 
     public function testStore()
     {
-        $url = ['name' => 'https://mvideo.ru'];
-        $response = $this->followingRedirects()->post(route('urls.store'), ['url' => $url]);
+        $response = $this->followingRedirects()->post(route('urls.store'), ['url' => $this->data]);
         $response->assertSessionHasNoErrors();
         $response->assertOk();
-        $response->assertSeeText($url['name']);
-        $this->assertDatabaseHas('urls', $url);
+        $response->assertSeeText($this->data['name']);
+        $this->assertDatabaseHas('urls', $this->data);
     }
 
     public function testShow()

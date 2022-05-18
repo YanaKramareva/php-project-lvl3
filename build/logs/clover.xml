@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652449863">
-  <project timestamp="1652449863">
+<coverage generated="1652893928">
+  <project timestamp="1652893928">
     <file name="/home/yana/php-project-lvl3/app/Console/Kernel.php">
       <class name="App\Console\Kernel" namespace="global">
         <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
@@ -27,58 +27,66 @@
     </file>
     <file name="/home/yana/php-project-lvl3/app/Http/Controllers/UrlCheckController.php">
       <class name="App\Http\Controllers\UrlCheckController" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="14" coveredelements="14"/>
+        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="13" elements="18" coveredelements="13"/>
       </class>
-      <line num="13" type="method" name="store" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="13" type="method" name="store" visibility="public" complexity="2" crap="2.05" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <metrics loc="43" ncloc="43" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="13" elements="18" coveredelements="13"/>
+    </file>
+    <file name="/home/yana/php-project-lvl3/app/Http/Controllers/UrlController.php">
+      <class name="App\Http\Controllers\UrlController" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="24" elements="33" coveredelements="26"/>
+      </class>
+      <line num="11" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="14" type="stmt" count="1"/>
       <line num="15" type="stmt" count="1"/>
       <line num="16" type="stmt" count="1"/>
       <line num="17" type="stmt" count="1"/>
       <line num="18" type="stmt" count="1"/>
       <line num="19" type="stmt" count="1"/>
       <line num="20" type="stmt" count="1"/>
-      <line num="22" type="stmt" count="1"/>
-      <line num="24" type="stmt" count="1"/>
-      <line num="25" type="stmt" count="1"/>
+      <line num="24" type="method" name="store" visibility="public" complexity="2" crap="2.26" count="1"/>
       <line num="26" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
       <line num="33" type="stmt" count="1"/>
       <line num="34" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="1"/>
-      <metrics loc="38" ncloc="38" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="14" coveredelements="14"/>
-    </file>
-    <file name="/home/yana/php-project-lvl3/app/Http/Controllers/UrlController.php">
-      <class name="App\Http\Controllers\UrlController" namespace="global">
-        <metrics complexity="4" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="20" elements="29" coveredelements="22"/>
-      </class>
-      <line num="12" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="14" type="stmt" count="1"/>
-      <line num="15" type="stmt" count="1"/>
-      <line num="16" type="stmt" count="1"/>
-      <line num="17" type="stmt" count="1"/>
-      <line num="18" type="stmt" count="1"/>
-      <line num="22" type="method" name="store" visibility="public" complexity="2" crap="2.26" count="1"/>
-      <line num="24" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="1"/>
-      <line num="32" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="1"/>
       <line num="36" type="stmt" count="1"/>
-      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="1"/>
       <line num="39" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
       <line num="46" type="stmt" count="0"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="50" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
       <line num="51" type="stmt" count="1"/>
-      <line num="54" type="method" name="show" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="56" type="stmt" count="2"/>
-      <line num="57" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="53" type="stmt" count="1"/>
+      <line num="56" type="method" name="show" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="58" type="stmt" count="2"/>
-      <line num="59" type="stmt" count="2"/>
       <line num="60" type="stmt" count="2"/>
       <line num="62" type="stmt" count="2"/>
-      <metrics loc="65" ncloc="65" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="20" elements="29" coveredelements="22"/>
+      <line num="63" type="stmt" count="2"/>
+      <line num="64" type="stmt" count="2"/>
+      <line num="65" type="stmt" count="2"/>
+      <line num="67" type="stmt" count="2"/>
+      <metrics loc="70" ncloc="70" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="24" elements="33" coveredelements="26"/>
     </file>
     <file name="/home/yana/php-project-lvl3/app/Http/Kernel.php">
       <class name="App\Http\Kernel" namespace="global">
@@ -111,13 +119,13 @@
       <class name="App\Http\Middleware\RedirectIfAuthenticated" namespace="global">
         <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
       </class>
-      <line num="20" type="method" name="handle" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="12" type="method" name="handle" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
       <line num="22" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <metrics loc="33" ncloc="25" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+      <metrics loc="25" ncloc="25" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
     </file>
     <file name="/home/yana/php-project-lvl3/app/Http/Middleware/TrimStrings.php">
       <class name="App\Http\Middleware\TrimStrings" namespace="global">
@@ -205,6 +213,6 @@
       <line num="53" type="stmt" count="0"/>
       <metrics loc="58" ncloc="41" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="13" coveredelements="11"/>
     </file>
-    <metrics files="20" loc="678" ncloc="504" classes="12" methods="15" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="69" coveredstatements="51" elements="84" coveredelements="59"/>
+    <metrics files="20" loc="680" ncloc="514" classes="12" methods="15" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="55" elements="92" coveredelements="62"/>
   </project>
 </coverage>
