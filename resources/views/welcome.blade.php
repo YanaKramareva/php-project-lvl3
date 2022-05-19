@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @csrf
 @section('content')
-    @include('layouts.flash_msg')
+    @include('flash::message')
 
     @if ($errors->any())
         @if ($errors->url)

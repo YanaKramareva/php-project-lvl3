@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+
 class UrlController extends Controller
 {
     public function index()
@@ -23,7 +24,7 @@ class UrlController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData =  $this->validate(
+        $this->validate(
             $request,
             [
                 'url.name' => 'required|max:255|active_url'
@@ -42,15 +43,13 @@ class UrlController extends Controller
                     'created_at' => Carbon::now()
                 ]
             );
-
+            flash(message: 'Страница успешно добавлена')->success();
             return redirect()
-                ->route('urls.show', ['url' => $urlId])
-                ->with('success', 'Страница успешно добавлена');
+                ->route('urls.show', ['url' => $urlId]);
         }
-
-        return redirect()
-            ->route('urls.show', ['url' => $url->id])
-            ->with('success', 'Страница уже существует');
+            flash(message: 'Страница уже существует')->info();
+            return redirect()
+                ->route('urls.show', ['url' => $url->id]);
     }
 
     public function show(int $id)
