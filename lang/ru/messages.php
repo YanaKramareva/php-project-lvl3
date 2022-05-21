@@ -15,6 +15,7 @@ return [
     'The page has been added successfully' => 'Страница успешно добавлена',
     'The page has already been added' => 'Страница уже существует',
     'Page has been checked successfully' => 'Страница успешно проверена',
+    'Page not found' => 'Страница не найдена',
     'Page analyzer' => 'Анализатор страниц',
     'Main' => 'Главная',
     'Sites' => 'Сайты',

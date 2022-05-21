@@ -42,11 +42,11 @@ class UrlController extends Controller
                     'created_at' => Carbon::now()
                 ]
             );
-            flash(message: 'Страница успешно добавлена')->success();
+            flash(__('messages.The page has been added successfully'))->success();
             return redirect()
                 ->route('urls.show', ['url' => $urlId]);
         }
-            flash(message: 'Страница уже существует')->info();
+        flash(__('messages.The page has already been added'))->info();
             return redirect()
                 ->route('urls.show', ['url' => $url->id]);
     }
@@ -55,7 +55,7 @@ class UrlController extends Controller
     {
         $url = DB::table('urls')->find($id);
 
-        abort_unless($url, 404, 'Страница не найдена');
+        abort_unless($url, 404, __('messages.Page not found'));
 
         $urlChecks = DB::table('url_checks')
             ->where('url_id', $id)
