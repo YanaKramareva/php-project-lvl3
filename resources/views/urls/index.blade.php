@@ -5,9 +5,9 @@
         <table class="table table-bordered table-hover text-nowrap">
             <tr>
                 <th>ID</th>
-                <th>Имя</th>
-                <th>Последняя проверка</th>
-                <th>Код ответа</th>
+                <th>{{ __('messages.Name') }}</th>
+                <th>{{ __('messages.Last check') }}</th>
+                <th>{{ __('messages.Status code') }}</th>
             </tr>
             @if ($urls)
                 @foreach($urls as $url)
